@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:gravity="center"
+	android:orientation="vertical">
+
+	<android.support.v7.widget.Toolbar
+		android:id="@+id/my_toolbar"
+		android:layout_width="match_parent"
+		android:layout_height="?attr/actionBarSize"
+		android:background="?attr/colorPrimary"
+		android:elevation="4dp"
+		android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+		app:popupTheme="@style/ThemeOverlay.AppCompat"/>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:orientation="horizontal">
+
+		<EditText
+			android:layout_height="wrap_content"
+			android:inputType="textPersonName"
+			android:layout_width="wrap_content"
+			android:ems="10"
+			android:id="@+id/char_name"/>
+
+	</LinearLayout>
+
+	<Spinner
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:id="@+id/char_class_spinner"/>
+
+	<Button
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:text="Generate"
+		android:id="@+id/gen_button"/>
+	<TextView
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:gravity="center"
+		android:id="@+id/death_screen"/>
+
+	<ListView
+        android:id="@+id/death_list"
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"/>
+
+</LinearLayout>
+

@@ -1,0 +1,18 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:colorBackground">@android:color/background_dark</item>
+        <item name="android:textViewStyle">@style/MonoTextView</item>
+    </style>
+
+    <style name="MonoTextView">
+        <item name="android:fontFamily">monospace</item>
+    </style>
+
+    <style name="RobotoButtonStyle">
+        <item name="android:fontFamily">monospace</item>
+    </style>
+
+</resources>
