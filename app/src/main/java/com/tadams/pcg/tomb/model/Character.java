@@ -1,4 +1,6 @@
-package com.tadams.pcg.tomb;
+package com.tadams.pcg.tomb.model;
+import com.tadams.pcg.tomb.MainActivity;
+
 import java.util.*;
 
 public class Character

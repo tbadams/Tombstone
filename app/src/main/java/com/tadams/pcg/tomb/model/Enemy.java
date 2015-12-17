@@ -1,4 +1,4 @@
-package com.tadams.pcg.tomb;
+package com.tadams.pcg.tomb.model;
 
 import java.util.Random;
 

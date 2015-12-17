@@ -1,4 +1,4 @@
-package com.tadams.pcg.tomb;
+package com.tadams.pcg.tomb.model;
 
 public abstract class Danger
 {
