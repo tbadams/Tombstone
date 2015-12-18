@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 deathList.add(death);
                 deathAdapter.notifyDataSetChanged();
                 ((TextView) findViewById(R.id.death_screen)).setText(getGraveString(death.toString()));
+                nameEntry.setText("");
             }
         });
 
