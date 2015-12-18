@@ -27,14 +27,14 @@
 			android:layout_width="200dp"
 			android:layout_height="wrap_content"
 			android:name="com.tadams.pcg.tomb.DeathsFragment"
-			android:id="@+id/list_fragment"
+			android:id="@+id/deaths_fragment"
 			tools:layout="@layout/deaths"/>
 
 		<fragment
-			android:layout_width="wrap_content"
+			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:name="com.tadams.pcg.tomb.TombstoneFragment"
-			android:id="@+id/fragment"
+			android:id="@+id/tombstone_fragment"
 			tools:layout="@layout/tombstone"/>
 	</LinearLayout>
 

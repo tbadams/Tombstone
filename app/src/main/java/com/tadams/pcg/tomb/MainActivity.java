@@ -1,5 +1,6 @@
 package com.tadams.pcg.tomb;
 
+import android.app.ListFragment;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -7,22 +8,18 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.tadams.pcg.tomb.model.CharClass;
 import com.tadams.pcg.tomb.model.CharDeath;
-import com.tadams.pcg.tomb.model.Danger;
 import com.tadams.pcg.tomb.model.DeathFactory;
-import com.tadams.pcg.tomb.model.Enemy;
-import com.tadams.pcg.tomb.model.Trap;
 
 import java.util.ArrayList;
-import java.util.Random;
+import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
-    private static final double TRAP_CHANCE = 0.2;
+public class MainActivity extends AppCompatActivity implements DeathsFragment.DeathListProvider{
+
     private static final int GRAVE_WIDTH = 16;
 
     private final ArrayList<CharDeath> deathList = new ArrayList<>();
@@ -36,9 +33,6 @@ public class MainActivity extends AppCompatActivity {
 		final Spinner charClassEntry = (Spinner)findViewById(R.id.char_class_spinner);
 		charClassEntry.setAdapter(new ArrayAdapter<>(this,
                 android.R.layout.simple_dropdown_item_1line, CharClass.values()));
-        final ListView deathListView = (ListView)findViewById(R.id.death_list);
-        final ArrayAdapter<CharDeath> deathAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, deathList);
-        deathListView.setAdapter(deathAdapter);
 		Button genButton = (Button)findViewById(R.id.gen_button);
 		genButton.setOnClickListener(new View.OnClickListener() {
 
@@ -48,7 +42,10 @@ public class MainActivity extends AppCompatActivity {
                 CharClass charClass = (CharClass) charClassEntry.getSelectedItem();
                 CharDeath death = new DeathFactory().getDeath(name, charClass);
                 deathList.add(death);
-                deathAdapter.notifyDataSetChanged();
+                ListFragment deaths = (ListFragment)getFragmentManager().findFragmentById(R.id.deaths_fragment);
+                if(deaths != null && deaths.isAdded()) {
+                    ((ArrayAdapter<CharDeath>)deaths.getListAdapter()).notifyDataSetChanged();
+                }
                 ((TextView) findViewById(R.id.death_screen)).setText(getGraveString(death.toString()));
                 nameEntry.setText("");
             }
@@ -60,13 +57,10 @@ public class MainActivity extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
     }
-	
-	public static Danger getDanger(long seed) {
-        Random r = new Random(seed);
-        if(r.nextDouble() < TRAP_CHANCE) {
-            return new Trap(seed);
-        }
-        return new Enemy(seed);
+
+    @Override
+    public List<CharDeath> getDeaths() {
+        return deathList;
     }
 
     private String makeGraveLine(String text) {
