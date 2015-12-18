@@ -11,10 +11,10 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.tadams.pcg.tomb.model.Player;
 import com.tadams.pcg.tomb.model.CharClass;
 import com.tadams.pcg.tomb.model.CharDeath;
 import com.tadams.pcg.tomb.model.Danger;
+import com.tadams.pcg.tomb.model.DeathFactory;
 import com.tadams.pcg.tomb.model.Enemy;
 import com.tadams.pcg.tomb.model.Trap;
 
@@ -46,8 +46,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View p1) {
                 String name = nameEntry.getText().toString();
                 CharClass charClass = (CharClass) charClassEntry.getSelectedItem();
-                Player thisChar = new Player(name, charClass);
-                CharDeath death = thisChar.getDeath();
+                CharDeath death = new DeathFactory().getDeath(name, charClass);
                 deathList.add(death);
                 deathAdapter.notifyDataSetChanged();
                 ((TextView) findViewById(R.id.death_screen)).setText(getGraveString(death.toString()));
