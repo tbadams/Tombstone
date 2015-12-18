@@ -41,10 +41,5 @@
 		android:gravity="center"
 		android:id="@+id/death_screen"/>
 
-	<ListView
-        android:id="@+id/death_list"
-		android:layout_height="wrap_content"
-		android:layout_width="wrap_content"/>
-
 </LinearLayout>
 
