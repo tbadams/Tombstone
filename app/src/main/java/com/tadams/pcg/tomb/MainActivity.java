@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private static final double TRAP_CHANCE = 0.2;
     private static final int GRAVE_WIDTH = 16;
 
-    private ArrayList<CharDeath> deathList = new ArrayList<>();
+    private final ArrayList<CharDeath> deathList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)

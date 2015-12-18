@@ -55,7 +55,7 @@ public class Enemy extends Danger
 		GIANT("giant"),
 		ELEMENTAL("elemental"),
 		TITAN("titan"),
-		MINITAUR("minotaur"),
+		MINOTAUR("minotaur"),
 		LICH("lich"),
 		MUMMY("mummy"),
 		NAGA("naga"),
@@ -64,10 +64,10 @@ public class Enemy extends Danger
 		APE("ape"),
 		GOLEM("golem");
 		
-		private String name;
+		private final String name;
         private int monsterLevel;
 		
-		private EnemyType(String name){
+		EnemyType(String name){
 			this.name = name;
 		}
 
