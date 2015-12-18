@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:gravity="center_horizontal"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:layout_gravity="center">
+
+		<EditText
+			android:layout_height="wrap_content"
+			android:inputType="textPersonName"
+			android:layout_width="wrap_content"
+			android:ems="10"
+			android:id="@+id/char_name"
+			android:layout_gravity="center_horizontal"/>
+
+		<Spinner
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/char_class_spinner"
+			android:layout_weight="1"/>
+
+	</LinearLayout>
+
+	<Button
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:text="@string/generate"
+		android:id="@+id/gen_button"/>
+	<TextView
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:gravity="center"
+		android:id="@+id/death_screen"/>
+
+	<ListView
+        android:id="@+id/death_list"
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"/>
+
+</LinearLayout>
+
