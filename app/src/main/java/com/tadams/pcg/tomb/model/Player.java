@@ -3,7 +3,7 @@ import com.tadams.pcg.tomb.MainActivity;
 
 import java.util.*;
 
-public class Character
+public class Player
 {
 	private static final int SCORE_MULTIPLIER = 1234;
 	private static final int FLOOR_MULTIPLIER = 10;
@@ -14,7 +14,7 @@ public class Character
 	private int level = 1;
     private boolean amulet;
 	
-	public Character (String name, CharClass charClass){
+	public Player(String name, CharClass charClass){
 		this.name = name;
 		this.charClass = charClass;
 	}

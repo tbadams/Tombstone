@@ -11,6 +11,13 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.tadams.pcg.tomb.model.Player;
+import com.tadams.pcg.tomb.model.CharClass;
+import com.tadams.pcg.tomb.model.CharDeath;
+import com.tadams.pcg.tomb.model.Danger;
+import com.tadams.pcg.tomb.model.Enemy;
+import com.tadams.pcg.tomb.model.Trap;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -39,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View p1) {
                 String name = nameEntry.getText().toString();
                 CharClass charClass = (CharClass) charClassEntry.getSelectedItem();
-                Character thisChar = new Character(name, charClass);
+                Player thisChar = new Player(name, charClass);
                 CharDeath death = thisChar.getDeath();
                 deathList.add(death);
                 deathAdapter.notifyDataSetChanged();

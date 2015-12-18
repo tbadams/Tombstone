@@ -2,14 +2,14 @@ package com.tadams.pcg.tomb.model;
 
 public class CharDeath
 {
-	private final Character character;
+	private final Player character;
 	private final Danger killer;
 	private final String floor;
 	private final int score;
 	private int gold;
     private WhileStatus whileStatus;
 
-	public CharDeath(Character dude, Danger kill, String place, int score){
+	public CharDeath(Player dude, Danger kill, String place, int score){
 		character = dude;
 		killer = kill;
 		floor = place;
