@@ -1,7 +1,5 @@
 package com.tadams.pcg.tomb.model;
 
-import com.tadams.pcg.tomb.model.Danger;
-
 import java.util.Random;
 
 public class Trap extends Danger
@@ -14,14 +12,14 @@ public class Trap extends Danger
 		SPIKE_PIT("spike pit"),
 		DART_TRAP("dart trap");
 
-        private String name;
+        private final String name;
 
-        private TrapType(String name) {
+        TrapType(String name) {
             this.name = name;
         }
 	}
 
-    private TrapType type;
+    private final TrapType type;
 
     public Trap(long seed) {
         Random r = new Random(seed);

@@ -4,11 +4,11 @@ public abstract class Danger
 {
 	abstract String getName();
 
-	protected String getVerbPhrase() {
+	String getVerbPhrase() {
 		return "killed by";
 	}
 
-	protected boolean useArticle() {
+	boolean useArticle() {
 		return true;
 	}
 }

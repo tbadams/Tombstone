@@ -1,6 +1,7 @@
 package com.tadams.pcg.tomb.model;
 
 /**
+ * Enumeration of possible states the player can have been in when death occurred.
  * Created by tadams on 12/14/15.
  */
 enum WhileStatus {

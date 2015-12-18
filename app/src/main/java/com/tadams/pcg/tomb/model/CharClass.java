@@ -7,7 +7,7 @@ public enum CharClass
 	MAGICIAN("Magician"),
 	SCOUT("Scout");
 
-	private String name;
+	private final String name;
 
 	CharClass(String name) {
 		this.name = name;

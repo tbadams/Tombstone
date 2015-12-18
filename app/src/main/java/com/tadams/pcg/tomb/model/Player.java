@@ -1,5 +1,5 @@
 package com.tadams.pcg.tomb.model;
-public class Player // TODO default
+class Player // TODO default
 {
 
 	private final  String name;
