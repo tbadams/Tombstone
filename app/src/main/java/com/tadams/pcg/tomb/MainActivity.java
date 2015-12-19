@@ -1,6 +1,7 @@
 package com.tadams.pcg.tomb;
 
 import android.app.ListFragment;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -11,23 +12,38 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.tadams.pcg.tomb.model.CharClass;
 import com.tadams.pcg.tomb.model.CharDeath;
 import com.tadams.pcg.tomb.model.DeathFactory;
+import com.tadams.pcg.tomb.model.DeathSeed;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements DeathsFragment.DeathListProvider{
 
+    private static final String DEATHS_KEY = "deathslist";
     private static final int GRAVE_WIDTH = 16;
 
-    private final ArrayList<CharDeath> deathList = new ArrayList<>();
+    private ArrayList<CharDeath> deathList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        SharedPreferences sp = getSharedPreferences(DEATHS_KEY, MODE_PRIVATE);
+        if(sp.contains(DEATHS_KEY)) {
+            String listJson = sp.getString(DEATHS_KEY, "");
+            if(listJson.length() > 0) {
+                List<DeathSeed> seedList = new Gson().fromJson(listJson, new TypeToken<List<DeathSeed>>(){}.getType());
+                for(DeathSeed seed: seedList) {
+                    deathList.add(new DeathFactory().getDeath(seed.name, seed.charClass));
+                }
+            }
+        }
+
         setContentView(R.layout.main);
 		final EditText nameEntry = (EditText)findViewById(R.id.char_name);
 		final Spinner charClassEntry = (Spinner)findViewById(R.id.char_class_spinner);
@@ -56,6 +72,19 @@ public class MainActivity extends AppCompatActivity implements DeathsFragment.De
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
+    }
+
+    @Override
+    protected void onDestroy() {
+        List<DeathSeed> cacheList = new ArrayList<>();
+        for(CharDeath death: deathList) {
+            cacheList.add(death.getDeathSeed());
+        }
+
+        String listJson = new Gson().toJson(cacheList); //, new TypeToken<List<CharDeath>>(){}.getType());
+        SharedPreferences sp = getSharedPreferences(DEATHS_KEY, MODE_PRIVATE);
+        sp.edit().putString(DEATHS_KEY, listJson).apply();
+        super.onDestroy();
     }
 
     @Override

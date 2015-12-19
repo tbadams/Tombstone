@@ -34,4 +34,8 @@ public class CharDeath
         		.append(".");
 		return sb.toString();
 	}
+
+	public DeathSeed getDeathSeed() {
+		return new DeathSeed(character.getName(), character.getCharClass());
+	}
 }
