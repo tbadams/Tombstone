@@ -25,7 +25,7 @@ public class Enemy extends Danger
 		RAT("rat"),
 		SNAKE("snake"),
 		FERRET("ferret"),
-		WOLD("Wolf"),
+		WOLD("wolf"),
 		WARG("warg"),
 		TROLL("troll"),
 		OGRE("ogre"),
@@ -62,7 +62,8 @@ public class Enemy extends Danger
 		NECROMANCER("necromancer"),
 		WRAITH("wraith"),
 		APE("ape"),
-		GOLEM("golem");
+		GOLEM("golem"),
+		NEWT("newt");
 		
 		private final String name;
         private int monsterLevel;
