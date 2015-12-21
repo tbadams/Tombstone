@@ -21,6 +21,7 @@ import com.tadams.pcg.tomb.model.CharDeath;
 public class TombstoneFragment extends Fragment {
 
     private static final int GRAVE_WIDTH = 16;
+    private static final String GRAVE_KEY = "Grave_text_key";
 
     @Nullable
     @Override
@@ -43,11 +44,15 @@ public class TombstoneFragment extends Fragment {
                 nameEntry.setText("");
             }
         });
+        if(savedInstanceState != null && savedInstanceState.containsKey(GRAVE_KEY)) {
+            ((TextView)v.findViewById(R.id.death_screen)).setText(savedInstanceState.getString(GRAVE_KEY));
+        }
         return v;
     }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
+        outState.putString(GRAVE_KEY, (String)((TextView)getView().findViewById(R.id.death_screen)).getText());
         super.onSaveInstanceState(outState);
     }
 
