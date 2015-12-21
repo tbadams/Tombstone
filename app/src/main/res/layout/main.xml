@@ -22,7 +22,7 @@
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:name="com.tadams.pcg.tomb.TombstoneFragment"
-		android:id="@+id/fragment"
+		android:id="@+id/tombstone_fragment"
 		tools:layout="@layout/tombstone"/>
 
 </LinearLayout>
