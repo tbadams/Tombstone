@@ -65,6 +65,11 @@ public class MainActivity extends AppCompatActivity implements DeathsFragment.De
         return deathList;
     }
 
+    @Override
+    public void onDeathSelected(CharDeath death) {
+        setDeath(death);
+    }
+
 
     @Override
     public void makeDeath(String name, CharClass charClass) {
@@ -74,6 +79,10 @@ public class MainActivity extends AppCompatActivity implements DeathsFragment.De
         if(deaths != null && deaths.isAdded()) {
             ((ArrayAdapter<CharDeath>)deaths.getListAdapter()).notifyDataSetChanged();
         }
+        setDeath(death);
+    }
+
+    private void setDeath(CharDeath death) {
         TombstoneFragment tombstone = (TombstoneFragment)getFragmentManager().findFragmentById(R.id.tombstone_fragment);
         if(tombstone != null && tombstone.isAdded()) {
             tombstone.setDeath(death);
