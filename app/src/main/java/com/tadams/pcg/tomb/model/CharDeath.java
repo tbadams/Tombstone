@@ -1,5 +1,7 @@
 package com.tadams.pcg.tomb.model;
 
+import org.apache.commons.lang.WordUtils;
+
 public class CharDeath
 {
 	private final Player character;
@@ -20,7 +22,7 @@ public class CharDeath
 	public String toString()
 	{
 		StringBuilder sb = new StringBuilder();
-		sb.append(character.getName()).append(" the ")
+		sb.append(WordUtils.capitalize(character.getName())).append(" the ")
 				.append(character.getCharClass().getName()).append(", ").append(killer.getVerbPhrase()).append(" ");
         if(killer.useArticle()) {
             String killerName = killer.getName();
