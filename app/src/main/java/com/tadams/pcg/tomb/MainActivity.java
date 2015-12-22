@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements DeathsFragment.De
     private static final String DEATHS_KEY = "deathslist";
 
 
-    private ArrayList<CharDeath> deathList = new ArrayList<>();
+    private final ArrayList<CharDeath> deathList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)

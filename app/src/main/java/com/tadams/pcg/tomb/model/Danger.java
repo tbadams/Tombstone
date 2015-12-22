@@ -1,6 +1,6 @@
 package com.tadams.pcg.tomb.model;
 
-public abstract class Danger
+abstract class Danger
 {
 	abstract String getName();
 
