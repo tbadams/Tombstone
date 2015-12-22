@@ -63,13 +63,22 @@ public class Enemy extends Danger
 		WRAITH("wraith"),
 		APE("ape"),
 		GOLEM("golem"),
-		NEWT("newt");
+		NEWT("newt"),
+		SHOPKEEPER("shopkeeper") {
+			String getName(Random r) {
+				return this.name + " called " + fantasyNames[r.nextInt(fantasyNames.length)];
+			}
+		};
 		
-		private final String name;
+		final String name;
         private int monsterLevel;
 		
 		EnemyType(String name){
 			this.name = name;
+		}
+
+		String getName(Random random) {
+			return name;
 		}
 
 		@Override
@@ -79,14 +88,35 @@ public class Enemy extends Danger
 		}
 	}
 
+	private static String[] fantasyNames = {"Eaumuwu",
+			"Afra",
+			"Mitom",
+			"Flusc",
+			"Wib",
+			"Eose",
+			"Draifev",
+			"Gap",
+			"Hunkej",
+			"Otug",
+			"Oretroi",
+			"Iutam",
+			"Oskek",
+			"Wapraim",
+			"Seaukrai",
+			"Agrefe",
+			"Kroleg",
+			"Ina",
+			"Flebra",
+			"Wupez"};
+
     private String name;
 
     public Enemy() {
 
     }
 
-    public Enemy(long seed) {
-        name = EnemyType.values()[new Random(seed).nextInt(EnemyType.values().length)].name;
+    public Enemy(Random random, int dungeonLevel) {
+        name = EnemyType.values()[random.nextInt(EnemyType.values().length)].getName(random);
     }
 
     public String getName() {
