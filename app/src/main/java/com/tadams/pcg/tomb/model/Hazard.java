@@ -125,6 +125,7 @@ public class Hazard {
         GUNSHOT_WOUND,
         BOTTOMLESS_PIT,
         DRUG_OVERDOSE,
-        ALCOHOL_POISONING
+        ALCOHOL_POISONING,
+        MAGNAFYING_GLASS
     }
 }
