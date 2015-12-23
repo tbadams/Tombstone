@@ -1,7 +1,5 @@
 package com.tadams.pcg.tomb.model;
 
-import com.tadams.pcg.tomb.DangerTemplate;
-
 import java.util.List;
 import java.util.Random;
 

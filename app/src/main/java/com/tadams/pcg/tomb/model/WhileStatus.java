@@ -29,7 +29,11 @@ enum WhileStatus {
     MOVING_THROUGH_AIR("moving through the air"),
     DIGESTING("digesting"),
     GETTING_STONED("getting stoned"),
-    HIDING_FROM_THUNDERSTORM("hiding from a thunderstorm");
+    HIDING_FROM_THUNDERSTORM("hiding from a thunderstorm"),
+    GIBBERING("gibbering"),
+    BLIND("blind"),
+    SLEEPWALKING("sleepwalking"),
+    SHRUNK("shrunk to a tiny size");
 
     private final String phrase;
 
