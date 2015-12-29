@@ -8,6 +8,7 @@ public class Enemy extends Danger
 		ORC("orc"),
 		GOBLIN("goblin"),
 		DEMON("demon"),
+        SOLDIER_ANT("soldier ant"),
 		KOBOLD("kobold"),
 		CROCODILE("crocodile"),
 		DRAGON("dragon"),
