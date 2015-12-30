@@ -24,12 +24,11 @@ public class DeathFactory {
         int floorMedian = (int)(gaussian * FLOOR_MULTIPLIER);
         int floorNum = (int)Math.max(1, seed.nextGaussian() * FLOOR_VARIANCE + floorMedian);
         String floor = "Dungeon Level " + floorNum;
-        Danger killer = getDanger(seedLong, floorNum     );
+        Danger killer = getDanger(seed, floorNum     );
         return new CharDeath(character, killer, floor, score);
     }
 
-    private Danger getDanger(long seed, int dLevel) {
-        Random r = new Random(seed);
+    private Danger getDanger(Random r, int dLevel) {
         if(r.nextDouble() < HAZARD_CHANCE) {
             return hazardFactory.getHazard(r, dLevel);
         }
