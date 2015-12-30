@@ -7,31 +7,33 @@ import java.util.Random;
  * Created by tadams on 12/22/15.
  */
 public class Hazard {
+    private static final String DIED_OF = "died of";
     private DangerTemplate[] hazards = {
             new DangerTemplate("acidic corpse"),
             new DangerTemplate("alchemical blast"),
-            new DangerTemplate("brainlessness").setNoArticle(),
-            new DangerTemplate("suicide").setVerbPhrase("committed").setNoArticle(),
             new DangerTemplate("death ray"),
             new DangerTemplate("carnivorous bag"),
-            new DangerTemplate("exhaustion").setNoArticle(),
+            new DangerTemplate("riding accident"),
             new DangerTemplate("psychic blast"),
-            new DangerTemplate("overexertion"),
-            new DangerTemplate("strangulation"),
-            new DangerTemplate("suffocation"),
             new DangerTemplate("system shock"),
             new DangerTemplate("System Shock 2"),
-            new DangerTemplate("starvation"),
             new DangerTemplate("petrification"),
             new DangerTemplate("wrath of god"), // TODO gods
+            new DangerTemplate("overexertion").setNoArticle(),
+            new DangerTemplate("strangulation").setNoArticle(),
+            new DangerTemplate("suffocation").setNoArticle(),
+            new DangerTemplate("starvation").setNoArticle().setVerbPhrase(DIED_OF),
             new DangerTemplate("cancer").setNoArticle(),
             new DangerTemplate("VD").setNoArticle(),
-            new DangerTemplate("old age").setNoArticle().setVerbPhrase("died of"),
-            new DangerTemplate("riding accident"),
-            new DangerTemplate("boredom").setNoArticle().setVerbPhrase("died of"),
-            new DangerTemplate("embarassment").setNoArticle().setVerbPhrase("died of"),
-            new DangerTemplate("fright").setNoArticle().setVerbPhrase("died of"),
-            new DangerTemplate("spontaneous combustion"),
+            new DangerTemplate("dysentery").setNoArticle(),
+            new DangerTemplate("brainlessness").setNoArticle(),
+            new DangerTemplate("spontaneous combustion").setNoArticle(),
+            new DangerTemplate("old age").setNoArticle().setVerbPhrase(DIED_OF),
+            new DangerTemplate("exhaustion").setNoArticle().setVerbPhrase(DIED_OF),
+            new DangerTemplate("boredom").setNoArticle().setVerbPhrase(DIED_OF),
+            new DangerTemplate("embarassment").setNoArticle().setVerbPhrase(DIED_OF),
+            new DangerTemplate("fright").setNoArticle().setVerbPhrase(DIED_OF),
+            new DangerTemplate("suicide").setVerbPhrase("committed").setNoArticle(),
             new DangerTemplate("turned to gold").setNoArticle().setVerbPhrase("was"),};
 
 //    public enum HazardType {
