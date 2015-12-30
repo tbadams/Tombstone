@@ -11,7 +11,7 @@ public class DeathFactory {
     private static final int SCORE_MULTIPLIER = 1234;
     private static final int FLOOR_MULTIPLIER = 10;
     private static final int FLOOR_VARIANCE = 3;
-    private static final double HAZARD_CHANCE = 1.0; // TODO no
+    private static final double HAZARD_CHANCE = 0.4;
 
     private Hazard hazardFactory = new Hazard();
 
