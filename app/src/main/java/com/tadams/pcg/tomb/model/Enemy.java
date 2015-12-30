@@ -112,10 +112,6 @@ public class Enemy extends Danger
 
     private String name;
 
-    public Enemy() {
-
-    }
-
     public Enemy(Random random, int dungeonLevel) {
         name = EnemyType.values()[random.nextInt(EnemyType.values().length)].getName(random);
     }

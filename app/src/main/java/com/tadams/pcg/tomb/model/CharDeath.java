@@ -1,6 +1,5 @@
 package com.tadams.pcg.tomb.model;
 
-
 import org.apache.commons.lang.WordUtils;
 
 public class CharDeath
