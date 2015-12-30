@@ -66,6 +66,24 @@ public class Enemy extends Danger
 		GOLEM("golem"),
 		NEWT("newt"),
         CYCLOPS("cyclops"),
+        CHIMERA("chimera"),
+        HYDRA("hydra"),
+        HARPY("harpy"),
+        SATYR("satyr"),
+        GRIFFIN("griffin"),
+        AMAZON("amazon"),
+        SPHINX("sphinx"),
+        KRAKEN("kraken"),
+        BASILISK("basilisk"),
+        CHUPACABRA("chupacabra"),
+        MANTICORE("manticore"),
+        COLLOSSUS("collossus"),
+        HIPPOGRIFF("hippogriff"),
+        KELPIE("kelpie"),
+        PIXIE("pixie"),
+        WENDIGO("wendigo"),
+        LEPRECHAUN("leprechaun"),
+
 		SHOPKEEPER("shopkeeper") {
 			String getName(Random r) {
 				return this.name + " called " + fantasyNames[r.nextInt(fantasyNames.length)];
