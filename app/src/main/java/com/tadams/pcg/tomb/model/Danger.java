@@ -1,14 +1,32 @@
 package com.tadams.pcg.tomb.model;
 
-abstract class Danger
+class Danger
 {
-	abstract String getName();
+	private String name;
+	private final String verbPhrase;
+	private final boolean usesArticle;
+
+	public Danger(){
+		name = null;
+		this.verbPhrase = "killed by";
+		this.usesArticle = true;
+	}
+
+	public Danger(String name, String verbPhrase, boolean usesArticle) {
+		this.name = name;
+		this.verbPhrase = verbPhrase;
+		this.usesArticle = usesArticle;
+	}
+
+	String getName() {
+		return name;
+	}
 
 	String getVerbPhrase() {
-		return "killed by";
+		return verbPhrase;
 	}
 
 	boolean useArticle() {
-		return true;
+		return usesArticle;
 	}
 }

@@ -1,6 +1,5 @@
 package com.tadams.pcg.tomb.model;
 
-import java.util.List;
 import java.util.Random;
 
 /**
@@ -12,13 +11,9 @@ public class DeathFactory {
     private static final int SCORE_MULTIPLIER = 1234;
     private static final int FLOOR_MULTIPLIER = 10;
     private static final int FLOOR_VARIANCE = 3;
-    private static final double TRAP_CHANCE = 0.2;
+    private static final double HAZARD_CHANCE = 1.0; // TODO no
 
-    private List<DangerTemplate> templates;
-
-    public DeathFactory() {
-
-    }
+    private Hazard hazardFactory = new Hazard();
 
     public CharDeath getDeath(String name, CharClass charClass) {
         long seedLong = (name + charClass.ordinal()).hashCode();
@@ -35,8 +30,8 @@ public class DeathFactory {
 
     private Danger getDanger(long seed, int dLevel) {
         Random r = new Random(seed);
-        if(r.nextDouble() < TRAP_CHANCE) {
-            return new Trap(seed);
+        if(r.nextDouble() < HAZARD_CHANCE) {
+            return hazardFactory.getHazard(r, dLevel);
         }
         return new Enemy(r, dLevel);
     }
