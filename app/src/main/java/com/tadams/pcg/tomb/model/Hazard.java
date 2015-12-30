@@ -103,6 +103,16 @@ public class Hazard {
             new DangerTemplate("sliced in twain").setNoArticle().setVerbPhrase(""),
             new DangerTemplate("sausage grinder"),
             new DangerTemplate("segmentation fault"),
+            new DangerTemplate("reverting to an infant").setNoArticle(),
+            new DangerTemplate("turned into a space fetus").setNoArticle().setVerbPhrase(""),
+            new DangerTemplate("demonic possession"),
+            new DangerTemplate("out of body experience becoming permanent"),
+            new DangerTemplate("black hole"),
+            new DangerTemplate("quit").setNoArticle().setVerbPhrase(""),
+            new DangerTemplate("escaped").setNoArticle().setVerbPhrase(""),
+            new DangerTemplate("touching an artifact").setNoArticle(), //TODO artifacts
+            new DangerTemplate("teleporting into a wall").setNoArticle(),
+            
     };
 
 //    public enum HazardType {
@@ -131,7 +141,6 @@ public class Hazard {
 //        TELEPORT_FALL,
 //        TELEPORT_WALL,
 //        THROWN_POTION,
-//        TOUCH_ARTIFACT,
 //        TOUCH_EDGE_UNIVERSE,
 //        DEATH_TOUCH,
 //        SLIMED,

@@ -65,6 +65,7 @@ public class Enemy extends Danger
 		APE("ape"),
 		GOLEM("golem"),
 		NEWT("newt"),
+        CYCLOPS("cyclops"),
 		SHOPKEEPER("shopkeeper") {
 			String getName(Random r) {
 				return this.name + " called " + fantasyNames[r.nextInt(fantasyNames.length)];
