@@ -18,14 +18,14 @@ public class Hazard {
             new DangerTemplate("system shock"),
             new DangerTemplate("System Shock 2"),
             new DangerTemplate("petrification"),
-            new DangerTemplate("wrath of god"), // TODO gods
+            new DangerTemplate("the wrath of god").setNoArticle(), // TODO gods
             new DangerTemplate("overexertion").setNoArticle(),
             new DangerTemplate("strangulation").setNoArticle(),
             new DangerTemplate("suffocation").setNoArticle(),
             new DangerTemplate("starvation").setNoArticle().setVerbPhrase(DIED_OF),
             new DangerTemplate("cancer").setNoArticle(),
             new DangerTemplate("VD").setNoArticle(),
-            new DangerTemplate("dysentery").setNoArticle(),
+            new DangerTemplate("dysentery").setNoArticle().setVerbPhrase(DIED_OF),
             new DangerTemplate("brainlessness").setNoArticle(),
             new DangerTemplate("spontaneous combustion").setNoArticle(),
             new DangerTemplate("old age").setNoArticle().setVerbPhrase(DIED_OF),
@@ -34,42 +34,40 @@ public class Hazard {
             new DangerTemplate("embarassment").setNoArticle().setVerbPhrase(DIED_OF),
             new DangerTemplate("fright").setNoArticle().setVerbPhrase(DIED_OF),
             new DangerTemplate("suicide").setVerbPhrase("committed").setNoArticle(),
-            new DangerTemplate("turned to gold").setNoArticle().setVerbPhrase("was"),};
+            new DangerTemplate("turned to gold").setNoArticle().setVerbPhrase("was"),
+            new DangerTemplate("blast"), //TODO magic
+            new DangerTemplate("bolt"), // TODO magic
+            new DangerTemplate("boiling water").setNoArticle(),
+            new DangerTemplate("boiling potion"),
+            new DangerTemplate("cadaver"),
+            new DangerTemplate("iron ball collision"),
+            new DangerTemplate("their own magical blast").setVerbPhrase("caught in").setNoArticle(),
+            new DangerTemplate("genocidal confusion").setNoArticle(),
+            new DangerTemplate("gas cloud"),
+            new DangerTemplate("fell"), // TODO onto sink or into chasm, spike pit, pit, etc.
+            new DangerTemplate("falling rock"),
+            new DangerTemplate("falling object"),
+            new DangerTemplate("exploding"), // TODO object: door, chest
+            new DangerTemplate("explosion"),
+            new DangerTemplate("elementary").setNoArticle(), // TODO physics or chemistry
+            new DangerTemplate("electric shock"),
+            new DangerTemplate("electric chair"),
+            new DangerTemplate("drowned").setNoArticle().setVerbPhrase(""), // TODO location, monster
+            new DangerTemplate("falling downstairs").setNoArticle(),
+            new DangerTemplate("Medusa's gaze").setNoArticle().setVerbPhrase("petrified by"),
+            new DangerTemplate("cursed throne"),
+            new DangerTemplate("iron ball").setVerbPhrase("crunched in the head by"),
+            new DangerTemplate("crashing into iron bars").setNoArticle(),
+            new DangerTemplate("burned to death").setNoArticle().setVerbPhrase(""),
+            new DangerTemplate("contaminated water").setNoArticle(),
+            new DangerTemplate("contact-posioned speelbook"),
+            new DangerTemplate("colliding with the ceiling").setNoArticle(),
+            new DangerTemplate("drawbridge").setVerbPhrase("crushed to death by"), // TODO collapsing, falling, exploding
+            new DangerTemplate("food").setVerbPhrase("choked on their").setNoArticle(), // TODO food
+            new DangerTemplate("bumping into").setNoArticle(), //TODO bumps
+    };
 
 //    public enum HazardType {
-//        BLAST, //TODO
-//        BOLT, // TODO
-//        BOILING,
-//        BUMPING,
-////        CADAVER,
-//        BURNING,
-//        CAUGHT_SELF,
-//        CHOKING,
-//        DRAWBRIDGE_CLOSE,
-//        DRAWBRIDGE_COLLAPSE,
-//        DRAWBRIDGE_FALLING,
-//        CEILING_COLLIDE,
-//        POISONED_SPELLBOOK(),
-//        CONTAMINATED_WATER(),
-//        CONTAMINATED_POTION,
-//        IRON_BARS,
-//        HEAD_CRUNCHED_BALL,
-//        THRONE,
-//        DELIBERATE_MEDUSA,
-//        DRAGGED_DOWNSTAIRS,
-//        DROWNED,
-//        ELECTRIC_CHAIR,
-//        ELECTRIC_SHOCK,
-//        ELEMENTARY,
-//        EXHAUSTION("exhaustion", false),
-//        EXPLODING, // chest, door, etc.
-//        EXPLOSION,
-//        FALLING_OBJECT,
-//        FALLING_ROCK,
-//        FALLING_OFF_A,
-//        FALLING_DOWNSTAIRS,
-//        FELL_ONTO, // pit, sink, spikes, etc
-//        GAS_CLOUD,
 //        GAS_SPORE_EXPLOSION,
 //        GENOCIDAL_CONFUSION,
 //        IRON_BALL,
