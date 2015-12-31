@@ -11,11 +11,12 @@ public class CharDeath
 	private int gold;
     private WhileStatus whileStatus;
 
-	public CharDeath(Player dude, Danger kill, String place, int score){
+	public CharDeath(Player dude, Danger kill, String place, int score, WhileStatus whileStatus){
 		character = dude;
 		killer = kill;
 		floor = place;
 		this.score = score;
+        this.whileStatus = whileStatus;
 	}
 
 	@Override

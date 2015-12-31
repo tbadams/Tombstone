@@ -1,5 +1,7 @@
 package com.tadams.pcg.tomb.model;
 
+import java.util.Random;
+
 /**
  * Enumeration of possible states the player can have been in when death occurred.
  * Created by tadams on 12/14/15.
@@ -43,5 +45,9 @@ enum WhileStatus {
 
     String phrase() {
         return phrase;
+    }
+
+    static WhileStatus newStatus(Random random) {
+        return values()[random.nextInt(values().length)];
     }
 }

@@ -12,6 +12,7 @@ public class DeathFactory {
     private static final int FLOOR_MULTIPLIER = 10;
     private static final int FLOOR_VARIANCE = 3;
     private static final double HAZARD_CHANCE = 0.4;
+    private static final double WHILE_STATUS_CHANCE = 0.5;
 
     private Hazard hazardFactory = new Hazard();
 
@@ -25,7 +26,11 @@ public class DeathFactory {
         int floorNum = (int)Math.max(1, seed.nextGaussian() * FLOOR_VARIANCE + floorMedian);
         String floor = "Dungeon Level " + floorNum;
         Danger killer = getDanger(seed, floorNum     );
-        return new CharDeath(character, killer, floor, score);
+        WhileStatus whileStatus = null;
+        if(seed.nextDouble() < WHILE_STATUS_CHANCE) {
+            whileStatus = WhileStatus.newStatus(seed);
+        }
+        return new CharDeath(character, killer, floor, score, whileStatus);
     }
 
     private Danger getDanger(Random r, int dLevel) {
