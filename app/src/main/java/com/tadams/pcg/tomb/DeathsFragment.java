@@ -13,6 +13,7 @@ import com.tadams.pcg.tomb.model.CharDeath;
 import java.util.List;
 
 /**
+ * Fragment for listing, viewing and editing the created deaths.
  * Created by tadams on 12/17/15.
  */
 public class DeathsFragment extends ListFragment {

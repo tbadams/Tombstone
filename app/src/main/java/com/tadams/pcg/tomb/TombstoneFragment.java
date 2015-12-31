@@ -16,6 +16,12 @@ import com.tadams.pcg.tomb.model.CharClass;
 import com.tadams.pcg.tomb.model.CharDeath;
 
 /**
+ * Fragment for displaying the details of a particular death.  Consists of the inputs for generating the character,
+ * an ASCII tombstone and further description below.
+ *
+ * The hosting Activity must implement {@link com.tadams.pcg.tomb.TombstoneFragment.DeathCreator} or a
+ * {@link ClassCastException} will be thrown during {@link #onCreateView(LayoutInflater, ViewGroup, Bundle)}.
+ *
  * Created by tadams on 12/17/15.
  */
 public class TombstoneFragment extends Fragment {
@@ -56,6 +62,10 @@ public class TombstoneFragment extends Fragment {
         super.onSaveInstanceState(outState);
     }
 
+    /**
+     * Provide the death the Fragment should display.
+     * @param death the death to display.
+     */
     public void setDeath(CharDeath death) {
         ((TextView)getView().findViewById(R.id.death_screen)).setText(getGraveString(death.toString()));
     }
@@ -99,6 +109,10 @@ public class TombstoneFragment extends Fragment {
         return sb.toString();
     }
 
+    /**
+     * An interface for classes responsible for delegating calls to create deaths.
+     * Specifically should be used by the activity hosting this fragment to receive user input on dreating deaths.
+     */
     public interface DeathCreator {
         void makeDeath(String name, CharClass charClass);
     }

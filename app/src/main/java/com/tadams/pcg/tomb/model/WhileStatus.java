@@ -17,25 +17,30 @@ enum WhileStatus {
     PARALYZED("paralyzed"),
     VOMITING("vomiting"),
     SLEEPING_DRAUGHT("sleeping off a magical draught"),
-    BOOZE("sleeping off a \"magical draught\""),
     MOUNTING("mounting"),
     JUMPING("jumping around"),
     FRIGHTENED("being frightened to death"),
     UNCONSCIOUS_ROTTEN("unconscious"),
-    DRESSING_UP("dressing up"),
+    DRESSING_UP("getting dressed"),
     FUMBLING("fumbling"),
     DRAGGING_BALL("dragging an iron ball"),
     TRYING_TURN("trying to turn a monster"),
-    BEING_TERRIFIED("being terrified by a demon"),
+    BEING_TERRIFIED("being terrified"),
     GAZING("gazing into a crystal ball"),
     MOVING_THROUGH_AIR("moving through the air"),
     DIGESTING("digesting"),
     GETTING_STONED("getting stoned"),
-    HIDING_FROM_THUNDERSTORM("hiding from a thunderstorm"),
-    GIBBERING("gibbering"),
-    BLIND("blind"),
+    HIDING_FROM_THUNDERSTORM("hiding"),
+    GIBBERING("gibbering crazily"),
+    BLIND("blind"), // TODO footrinsic?
     SLEEPWALKING("sleepwalking"),
-    SHRUNK("shrunk to a tiny size");
+    SHRUNK("shrunk to a tiny size"), // TODO footrinsic?
+    MIND_CONTROLLED("mind-controlled"),
+    POSSESSED("possessed"),
+    INEBRIATED("passed out drunk"),
+    COITUS("mid-coitus"),
+    DANCING("dancing"),
+    SINGING("singing"); // TODO footrinsic?
 
     private final String phrase;
 

@@ -12,10 +12,18 @@ public class DeathFactory {
     private static final int FLOOR_MULTIPLIER = 10;
     private static final int FLOOR_VARIANCE = 3;
     private static final double HAZARD_CHANCE = 0.4;
-    private static final double WHILE_STATUS_CHANCE = 0.5;
+    private static final double WHILE_STATUS_CHANCE = 0.1;
 
     private Hazard hazardFactory = new Hazard();
 
+    /**
+     * Generates a death for the given name and character class. The same input will produce the same output
+     * consistently, though this will not be true between different versions of this app.
+     *
+     * @param name  character name
+     * @param charClass character class
+     * @return  new character death
+     */
     public CharDeath getDeath(String name, CharClass charClass) {
         long seedLong = (name + charClass.ordinal()).hashCode();
         Player character = new Player(name, charClass);
