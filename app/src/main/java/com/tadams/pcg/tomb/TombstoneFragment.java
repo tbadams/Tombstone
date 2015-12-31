@@ -111,7 +111,7 @@ public class TombstoneFragment extends Fragment {
 
     /**
      * An interface for classes responsible for delegating calls to create deaths.
-     * Specifically should be used by the activity hosting this fragment to receive user input on dreating deaths.
+     * Specifically should be used by the activity hosting this fragment to receive user input on creating deaths.
      */
     public interface DeathCreator {
         void makeDeath(String name, CharClass charClass);
