@@ -83,6 +83,10 @@ public class Enemy extends Danger
         PIXIE("pixie"),
         WENDIGO("wendigo"),
         LEPRECHAUN("leprechaun"),
+        GAS_SPORE("gas spore"), // TODO "'s explosion'?
+		QUIVERING_BLOB("quivering blob"),
+		COBRA("cobra"),
+		PIT_VIPER("pit viper"), // TODO Poisened verb?
 
 		SHOPKEEPER("shopkeeper") {
 			String getName(Random r) {
