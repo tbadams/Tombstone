@@ -35,12 +35,14 @@ enum WhileStatus {
     BLIND("blind"), // TODO footrinsic?
     SLEEPWALKING("sleepwalking"),
     SHRUNK("shrunk to a tiny size"), // TODO footrinsic?
-    MIND_CONTROLLED("mind-controlled"),
-    POSSESSED("possessed"),
+    MIND_CONTROLLED("mind-controlled"), // TODO footrinsic?
+    POSSESSED("possessed"), // TODO footrinsic?
     INEBRIATED("passed out drunk"),
     COITUS("mid-coitus"),
     DANCING("dancing"),
-    SINGING("singing"); // TODO footrinsic?
+    SINGING("singing"),
+    SPIDER_WEB("stuck in a spider web"),
+    POLYMORPHED("stuck in creature form"); // TODO creatures
 
     private final String phrase;
 
